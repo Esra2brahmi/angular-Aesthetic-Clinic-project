@@ -1,0 +1,209 @@
+<mat-card class="cardWithShadow theme-card">
+  <mat-card-header>
+    <mat-card-title class="m-b-0">Patient Profile</mat-card-title>
+  </mat-card-header>
+  <mat-card-content class="b-t-1">
+    <div class="row">
+      <div class="col-lg-6">
+        <!-- --------------------------------------------------- -->
+        <!-- two line -->
+        <!-- --------------------------------------------------- -->
+        <mat-card class="b-1 shadow-none">
+          <mat-card-header>
+            <mat-card-title>Basic Information</mat-card-title>
+          </mat-card-header>
+          <mat-card-content class="b-t-1">
+            <mat-list>
+              <mat-list-item>
+                <span matListItemTitle class="f-s-16 f-w-600">Full Name</span>
+                <span matListItemLine class="mat-body-1">Jane Smith</span>
+              </mat-list-item>
+              <mat-list-item>
+                <span matListItemTitle class="f-s-16 f-w-600">Gender</span>
+                <span matListItemLine class="mat-body-1">Female</span>
+              </mat-list-item>
+              <mat-list-item>
+                <span matListItemTitle class="f-s-16 f-w-600">Date of birth</span>
+                <span matListItemLine class="mat-body-1">27/01/1998</span>
+              </mat-list-item>
+              <mat-list-item>
+                <span matListItemTitle class="f-s-16 f-w-600">City</span>
+                <span matListItemLine class="mat-body-1">Tunis</span>
+              </mat-list-item>
+            </mat-list>
+          </mat-card-content>
+        </mat-card>
+      </div>
+
+      <div class="col-lg-6">
+        <!-- --------------------------------------------------- -->
+        <!-- basic -->
+        <!-- --------------------------------------------------- -->
+        <mat-card class="b-1 shadow-none">
+          <mat-card-header>
+            <mat-card-title>Contact Information</mat-card-title>
+          </mat-card-header>
+          <mat-card-content class="b-t-1">
+            <mat-list role="list">
+              <mat-list-item role="listitem"><strong>Contact Number : </strong> +216 24 625 123</mat-list-item>
+              <mat-list-item role="listitem"><strong>Email Address : </strong> JaneSmith&#64;gmail.com</mat-list-item>
+              <mat-list-item role="listitem"><strong>Home Address : </strong>Rue Taher Hadded Tunis</mat-list-item>
+            </mat-list>
+          </mat-card-content>
+        </mat-card>
+      </div>
+      
+      
+        
+      <div class="col-lg-6">
+        <!-- --------------------------------------------------- -->
+        <!-- two line -->
+        <!-- --------------------------------------------------- -->
+        <mat-card class="b-1 shadow-none">
+          <mat-card-header>
+            <mat-card-title>Medications and Chronic Health Conditions</mat-card-title>
+          </mat-card-header>
+          <mat-card-content class="b-t-1">
+            <mat-list>
+              <mat-list-item>
+                <span matListItemTitle class="f-s-16 f-w-600">Current Medications</span>
+                <span matListItemLine class="mat-body-1">* Amlodipine </span>
+                <span matListItemLine class="mat-body-1">* Metformin </span>
+                <span matListItemLine class="mat-body-1">* Atorvastatin </span>
+                
+              </mat-list-item>
+              <mat-list-item>
+                <span matListItemTitle class="f-s-16 f-w-600">Chronic Conditions</span>
+                <span matListItemLine class="mat-body-1"
+                  >* Hypertension</span
+                >
+                <span class="mat-body-1">* Asthma</span>
+              </mat-list-item>
+            </mat-list>
+          </mat-card-content>
+        </mat-card>
+      </div>
+
+      <div class="col-lg-6">
+        <!-- --------------------------------------------------- -->
+        <!-- two line -->
+        <!-- --------------------------------------------------- -->
+        <mat-card class="b-1 shadow-none">
+          <mat-card-header>
+            <mat-card-title>Past Surgeries</mat-card-title>
+          </mat-card-header>
+          <mat-card-content class="b-t-1">
+            <mat-list style="max-width: 500px">
+              <mat-list-item lines="3">
+                <span matListItemTitle class="f-s-16 f-w-600">Appendectomy</span>
+                <span class="mat-body-1"
+                  >Surgical removal of the appendix to treat infection or inflammation, often due to appendicitis.
+                </span>
+              </mat-list-item>
+              <mat-list-item lines="3" class="mat-body-1">
+                <span matListItemTitle class="f-s-16 f-w-600">Knee Arthroscopy</span>
+                <span class="mat-body-1"
+                  >A minimally invasive procedure using small incisions to diagnose and treat knee joint problems, like torn cartilage.
+                </span>
+              </mat-list-item>
+            </mat-list>
+          </mat-card-content>
+        </mat-card>
+      </div>
+
+      <div class="col-lg-6">
+        <!-- --------------------------------------------------- -->
+        <!-- List with Selection -->
+        <!-- --------------------------------------------------- -->
+        <mat-card class="b-1 shadow-none">
+          <mat-card-header>
+            <mat-card-title>Areas of Concern</mat-card-title>
+          </mat-card-header>
+          <mat-card-content class="b-t-1">
+            <mat-selection-list #shoes>
+              @for(shoe of typesOfShoes; track shoe) {
+              <mat-list-option>
+                {{ shoe }}
+              </mat-list-option>
+              }
+            </mat-selection-list>
+
+            <p class="mat-subtitle-2 f-w-600 p-16 bg-light-primary rounded">
+              Options selected: {{ shoes.selectedOptions.selected.length }}
+            </p>
+          </mat-card-content>
+        </mat-card>
+      </div>
+
+      <div class="col-lg-6">
+        <!-- --------------------------------------------------- -->
+        <!-- List with single Selection -->
+        <!-- --------------------------------------------------- -->
+        <mat-card class="b-1 shadow-none">
+          <mat-card-header>
+            <mat-card-title>Smoking Status</mat-card-title>
+          </mat-card-header>
+          <mat-card-content class="b-t-1">
+            <mat-selection-list #shoes2 [multiple]="false">
+              @for(shoe of typesOfSmoke; track shoe) {
+              <mat-list-option [value]="shoe">
+                {{ shoe }}
+              </mat-list-option>
+              }
+            </mat-selection-list>
+
+            <p class="mat-subtitle-2 f-w-600 p-16 bg-light-primary rounded">
+              Option selected:
+              {{
+                shoes2.selectedOptions.hasValue()
+                  ? shoes2.selectedOptions.selected[0].value
+                  : "None"
+              }}
+            </p>
+          </mat-card-content>
+        </mat-card>
+      </div>
+
+      <div class="col-12">
+        <!-- --------------------------------------------------- -->
+        <!-- List with sections -->
+        <!-- --------------------------------------------------- -->
+        <mat-card class="b-1 shadow-none">
+          <mat-card-header>
+            <mat-card-title>Health Records & Documentation</mat-card-title>
+          </mat-card-header>
+          <mat-card-content class="b-t-1">
+            <mat-list>
+              <div mat-subheader class="mat-body-2 m-b-16 f-w-600">Medical Records</div>
+              @for(folder of folders; track folder.name) {
+              <mat-list-item>
+                <mat-icon matListItemIcon>folder</mat-icon>
+                <div matListItemTitle class="mat-body-2 f-w-600">
+                  {{ folder.name }}
+                </div>
+                <div matListItemLine class="f-s-14 mat-body-1">
+                  {{ folder.updated | date }}
+                </div>
+              </mat-list-item>
+              }
+
+              <mat-divider></mat-divider>
+              <div mat-subheader class="mat-body-2 m-y-16 f-w-600">Important Documents</div>
+              @for(note of notes; track note.name) {
+              <mat-list-item>
+                <mat-icon matListItemIcon>note</mat-icon>
+                <div matListItemTitle class="mat-body-2 f-w-600">
+                  {{ note.name }}
+                </div>
+                <div matListItemLine class="f-s-14 mat-body-1">
+                  {{ note.updated | date }}
+                </div>
+              </mat-list-item>
+              }
+            </mat-list>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>

@@ -1,0 +1,150 @@
+<mat-card class="cardWithShadow theme-card">
+  <mat-card-header>
+    <mat-card-title class="m-b-0">Form</mat-card-title>
+  </mat-card-header>
+  <mat-card-content class="b-t-1">
+    <form>
+      <div class="row">
+        <div class="col-lg-6">
+          <!-- input -->
+          <mat-label class="f-w-600 m-b-8 d-block">Full Name</mat-label>
+          <mat-form-field appearance="outline" class="w-100" color="primary">
+            <input matInput placeholder="your name " />
+          </mat-form-field>
+        </div>
+        <div class="col-lg-6">
+          <!-- Birth Date Field -->
+          <mat-label class="f-w-600 m-b-8 d-block">Date of Birth</mat-label>
+          <mat-form-field appearance="outline" class="w-100" color="primary">
+            <input matInput type="date" placeholder="MM/DD/YYYY" />
+          </mat-form-field>
+        </div>
+        <div class="col-lg-6">
+          <!-- Gender Field -->
+          <mat-label class="f-w-600 m-b-8 d-block">Gender</mat-label>
+          <mat-form-field appearance="outline" class="w-100" color="primary">
+            <mat-select placeholder="Select gender">
+              <mat-option value="female">Female</mat-option>
+              <mat-option value="male">Male</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="col-lg-6">
+          <!-- Contact Number Field -->
+          <mat-label class="f-w-600 m-b-8 d-block">Contact Number</mat-label>
+          <mat-form-field appearance="outline" class="w-100" color="primary">
+            <input matInput type="tel" placeholder="Enter your contact number" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" />
+          </mat-form-field>
+        </div>
+        <div class="col-lg-6">
+          <mat-label class="f-w-600 m-b-8 d-block">City</mat-label>
+          <mat-form-field appearance="outline" class="w-100">
+            <mat-select [(value)]="selectedCountry">
+              @for(option of country; track option.value) {
+              <mat-option [value]="option.value">{{
+                option.viewValue
+              }}</mat-option>
+              }
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="col-lg-6">
+          <!-- input -->
+          <mat-label class="f-w-600 m-b-8 d-block">Email</mat-label>
+          <mat-form-field appearance="outline" class="w-100" color="primary">
+            <input matInput type="email" placeholder="your email" />
+          </mat-form-field>
+        </div>
+        <div class="col-lg-6">
+          <!-- input -->
+          <mat-label class="f-w-600 m-b-8 d-block">Password</mat-label>
+          <mat-form-field appearance="outline" class="w-100" color="primary">
+            <input matInput type="password" placeholder="your password" />
+          </mat-form-field>
+        </div>
+        <div class="col-lg-6">
+          <!-- Known Allergies Field -->
+          <mat-label class="f-w-600 m-b-8 d-block">Known Allergies</mat-label>
+          <mat-form-field appearance="outline" class="w-100" color="primary">
+            <textarea matInput placeholder="List any known allergies" rows="4"></textarea>
+          </mat-form-field>
+        </div>
+        <div class="col-lg-6">
+          <!-- Current Medications Field -->
+          <mat-label class="f-w-600 m-b-8 d-block">Current Medications</mat-label>
+          <mat-form-field appearance="outline" class="w-100" color="primary">
+            <textarea matInput placeholder="List any current medications" rows="4"></textarea>
+          </mat-form-field>
+        </div>
+        <!-- Past Surgeries -->
+    <div class="col-lg-6">
+      <mat-label class="f-w-600 m-b-8 d-block">Past Surgeries</mat-label>
+      <mat-form-field appearance="outline" class="w-100" color="primary">
+        <textarea matInput placeholder="List any past surgeries" rows="4"></textarea>
+      </mat-form-field>
+    </div>
+     <!-- Chronic Conditions -->
+     <div class="col-lg-6">
+      <mat-label class="f-w-600 m-b-8 d-block">Chronic Conditions</mat-label>
+      <mat-form-field appearance="outline" class="w-100" color="primary">
+        <textarea matInput placeholder="List any chronic conditions" rows="4"></textarea>
+      </mat-form-field>
+    </div>
+     <!-- Skin Sensitivities or Conditions -->
+     <div class="col-lg-6">
+      <mat-label class="f-w-600 m-b-8 d-block">Skin Sensitivities or Conditions</mat-label>
+      <mat-form-field appearance="outline" class="w-100" color="primary">
+        <textarea matInput placeholder="List any skin sensitivities or conditions" rows="4"></textarea>
+      </mat-form-field>
+    </div>
+     <!-- Smoking Status -->
+     <div class="col-lg-6">
+      <mat-label class="f-w-600 m-b-8 d-block">Smoking Status</mat-label>
+      <mat-form-field appearance="outline" class="w-100" color="primary">
+        <mat-select placeholder="Select smoking status">
+          <mat-option value="current">Current</mat-option>
+          <mat-option value="former">Former</mat-option>
+          <mat-option value="never">Never</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+     <!-- Reason for Visit -->
+     <div class="col-lg-6">
+      <mat-label class="f-w-600 m-b-8 d-block">Reason for Visit</mat-label>
+      <mat-form-field appearance="outline" class="w-100" color="primary">
+        <mat-select placeholder="Select reason for visit">
+          <mat-option value="botox">Botox</mat-option>
+          <mat-option value="fillers">Fillers</mat-option>
+          <mat-option value="laser">Laser Treatment</mat-option>
+          <mat-option value="other">Other</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <!-- Areas of Concern -->
+    <div class="col-lg-6">
+      <mat-label class="f-w-600 m-b-8 d-block">Areas of Concern</mat-label>
+      <mat-form-field appearance="outline" class="w-100" color="primary">
+        <mat-select placeholder="Select areas of concern">
+          <mat-option value="wrinkles">Wrinkles</mat-option>
+          <mat-option value="acne">Acne</mat-option>
+          <mat-option value="scarring">Scarring</mat-option>
+          <mat-option value="other">Other</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <!-- Desired Results -->
+    <div class="col-lg-6">
+      <mat-label class="f-w-600 m-b-8 d-block">Desired Results</mat-label>
+      <mat-form-field appearance="outline" class="w-100" color="primary">
+        <textarea matInput placeholder="Describe what you’re hoping to achieve" rows="4"></textarea>
+      </mat-form-field>
+    </div>
+      </div>
+
+      <div class="m-t-12">
+        <button mat-flat-button color="primary" class="m-r-8">Submit</button>
+        <button mat-stroked-button color="warn">Cancel</button>
+      </div>
+    </form>
+  </mat-card-content>
+</mat-card>
