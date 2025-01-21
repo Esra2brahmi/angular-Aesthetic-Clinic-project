@@ -1,133 +1,206 @@
 <mat-card class="cardWithShadow theme-card">
   <mat-card-header>
-    <mat-card-title class="m-b-0">Menu</mat-card-title>
+    <mat-card-title class="m-b-0">Medical Services and Professionals</mat-card-title>
   </mat-card-header>
   <mat-card-content class="b-t-1">
     <div class="row">
-      <div class="col-sm-6 col-lg-4">
+
+   <div class="col"> <div  class="row " style="gap: 100px;">
+    <div class="col-sm-6 col-lg-4">
         <mat-card class="b-1 shadow-none">
           <mat-card-header>
-            <mat-card-title>Basic</mat-card-title>
+            <mat-card-title>Cosmetic Surgery Services</mat-card-title>
           </mat-card-header>
           <mat-card-content class="b-t-1">
-            <button
-              mat-flat-button
-              color="primary"
-              class="m-t-8"
-              [matMenuTriggerFor]="menu"
-            >
-              Menu
+            <button mat-flat-button color="primary" [matMenuTriggerFor]="aboveMenu" class="w-80">
+              Cosmetic Surgery
             </button>
-            <mat-menu #menu="matMenu" class="cardWithShadow">
-              <button mat-menu-item>Item 1</button>
-              <button mat-menu-item>Item 2</button>
-            </mat-menu>
-          </mat-card-content>
-        </mat-card>
-      </div>
-      <div class="col-sm-6 col-lg-4">
-        <mat-card class="b-1 shadow-none">
-          <mat-card-header>
-            <mat-card-title>with Icons</mat-card-title>
-          </mat-card-header>
-          <mat-card-content class="b-t-1">
-            <button
-              mat-icon-button
-              [matMenuTriggerFor]="menu"
-              aria-label="Example icon-button with a menu"
-            >
-              <mat-icon>
-                <i-tabler name="dots" class="icon-20"></i-tabler>
-              </mat-icon>
-            </button>
-            <mat-menu #menu="matMenu" class="cardWithShadow">
-              <button mat-menu-item>
-                <mat-icon>dialpad</mat-icon>
-                <span>Redial</span>
+            <mat-menu class="cardWithShadow" #aboveMenu="matMenu">
+              <button mat-menu-item [matMenuTriggerFor]="above1">
+                Breast Surgery
               </button>
-              <button mat-menu-item disabled>
-                <mat-icon>voicemail</mat-icon>
-                <span>Check voice mail</span>
+              <button mat-menu-item [matMenuTriggerFor]="above2">
+                Rhinoplasty
               </button>
-              <button mat-menu-item>
-                <mat-icon>notifications_off</mat-icon>
-                <span>Disable alerts</span>
+              <button mat-menu-item [matMenuTriggerFor]="above3">
+                Abdominoplasty
               </button>
-            </mat-menu>
-          </mat-card-content>
-        </mat-card>
-      </div>
-      <div class="col-sm-6 col-lg-4">
-        <mat-card class="b-1 shadow-none">
-          <mat-card-header>
-            <mat-card-title>Nested Menu</mat-card-title>
-          </mat-card-header>
-          <mat-card-content class="b-t-1">
-            <button
-              mat-flat-button
-              color="primary"
-              [matMenuTriggerFor]="animals"
-              class="m-t-8"
-            >
-              Animal index
-            </button>
-            <mat-menu class="cardWithShadow" #animals="matMenu">
-              <button mat-menu-item [matMenuTriggerFor]="vertebrates">
-                Vertebrates
+              <button mat-menu-item [matMenuTriggerFor]="above4">
+                Blepharoplasty
               </button>
-              <button mat-menu-item [matMenuTriggerFor]="invertebrates">
-                Invertebrates
+              <button mat-menu-item [matMenuTriggerFor]="above5">
+                Mini Facelift
+              </button>
+              <button mat-menu-item [matMenuTriggerFor]="above6">
+                Gentle Liposuction
               </button>
             </mat-menu>
 
-            <mat-menu class="cardWithShadow" #vertebrates="matMenu">
-              <button mat-menu-item [matMenuTriggerFor]="fish">Fishes</button>
-              <button mat-menu-item [matMenuTriggerFor]="amphibians">
-                Amphibians
-              </button>
-              <button mat-menu-item [matMenuTriggerFor]="reptiles">
-                Reptiles
-              </button>
-              <button mat-menu-item>Birds</button>
-              <button mat-menu-item>Mammals</button>
+            <mat-menu class="cardWithShadow" #above1="matMenu">
+              <button mat-menu-item >Dr. Amelia Carter</button>
+              <button mat-menu-item>Dr. Ethan Wells</button>
+              <button mat-menu-item>Dr. Lila Novak</button>
             </mat-menu>
 
-            <mat-menu class="cardWithShadow" #invertebrates="matMenu">
-              <button mat-menu-item>Insects</button>
-              <button mat-menu-item>Molluscs</button>
-              <button mat-menu-item>Crustaceans</button>
-              <button mat-menu-item>Corals</button>
-              <button mat-menu-item>Arachnids</button>
-              <button mat-menu-item>Velvet worms</button>
-              <button mat-menu-item>Horseshoe crabs</button>
+            <mat-menu class="cardWithShadow" #above2="matMenu">
+              <button mat-menu-item>Dr. Martin Dubois</button>
+              <button mat-menu-item>Dr. Sophie Bernard</button>
             </mat-menu>
 
-            <mat-menu class="cardWithShadow" #fish="matMenu">
-              <button mat-menu-item>Baikal oilfish</button>
-              <button mat-menu-item>Bala shark</button>
-              <button mat-menu-item>Ballan wrasse</button>
-              <button mat-menu-item>Bamboo shark</button>
-              <button mat-menu-item>Banded killifish</button>
+            <mat-menu class="cardWithShadow" #above3="matMenu">
+              <button mat-menu-item>Dr. Julien Perrin</button>
+              <button mat-menu-item>Dr. Clara Moreau</button>
             </mat-menu>
 
-            <mat-menu class="cardWithShadow" #amphibians="matMenu">
-              <button mat-menu-item>Sonoran desert toad</button>
-              <button mat-menu-item>Western toad</button>
-              <button mat-menu-item>Arroyo toad</button>
-              <button mat-menu-item>Yosemite toad</button>
+            <mat-menu class="cardWithShadow" #above4="matMenu">
+              <button mat-menu-item>Dr. Nathan Lefevre</button>
+              <button mat-menu-item>Dr. Elise Laurent</button>
+              
             </mat-menu>
 
-            <mat-menu class="cardWithShadow" #reptiles="matMenu">
-              <button mat-menu-item>Banded Day Gecko</button>
-              <button mat-menu-item>Banded Gila Monster</button>
-              <button mat-menu-item>Black Tree Monitor</button>
-              <button mat-menu-item>Blue Spiny Lizard</button>
-              <button mat-menu-item disabled>Velociraptor</button>
+            <mat-menu class="cardWithShadow" #above5="matMenu">
+              <button mat-menu-item>Dr. Lucas Marchand</button>
+              <button mat-menu-item>Dr. Alice Fontaine</button>
+            </mat-menu>
+
+            <mat-menu class="cardWithShadow" #above6="matMenu">
+              <button mat-menu-item>Dr. Victor Blanchet</button>
             </mat-menu>
           </mat-card-content>
         </mat-card>
       </div>
 
+      <div class="col-sm-6 col-lg-4">
+        <mat-card class="b-1 shadow-none">
+          <mat-card-header >
+            <mat-card-title >Aesthetic Medicine </mat-card-title>
+          </mat-card-header>
+          <mat-card-content class="b-t-1">
+            <button mat-flat-button color="primary" [matMenuTriggerFor]="belowMenu" class="w-80">
+              Aesthetic Medicine
+            </button>
+            <mat-menu class="cardWithShadow" #belowMenu="matMenu">
+              <button mat-menu-item [matMenuTriggerFor]="below1">
+                Facial Rejuvenation
+              </button>
+              <button mat-menu-item [matMenuTriggerFor]="below2">
+                Aesthetic Medicine for the Face
+              </button>
+              <button mat-menu-item [matMenuTriggerFor]="below3">
+                Aesthetic Medicine for the Body
+              </button>
+              <button mat-menu-item [matMenuTriggerFor]="below4">
+                Fat Grafting
+              </button>
+              <button mat-menu-item [matMenuTriggerFor]="below5">
+                Brazilian Butt Lift
+              </button>
+            </mat-menu>
+
+            <mat-menu class="cardWithShadow" #below1="matMenu">
+              <button mat-menu-item >Dr. Camille Dubreuil</button>
+            </mat-menu>
+
+            <mat-menu class="cardWithShadow" #below2="matMenu">
+              <button mat-menu-item>Dr. Adrien Rousseau</button>
+            </mat-menu>
+
+            <mat-menu class="cardWithShadow" #below3="matMenu">
+              <button mat-menu-item>Dr. Juliette Garnier</button>
+            </mat-menu>
+
+            <mat-menu class="cardWithShadow" #below4="matMenu">
+              <button mat-menu-item>Dr. Mathieu Clément</button> 
+            </mat-menu>
+
+            <mat-menu class="cardWithShadow" #below5="matMenu">
+              <button mat-menu-item>Dr. Pauline Reynaud</button>
+            </mat-menu>
+          </mat-card-content>
+        </mat-card>
+      </div></div> 
+
+    <div class="row d-flex" style="gap: 100px;">
+       <div class="col-sm-6 col-lg-4">
+        <mat-card class="b-1 shadow-none">
+          <mat-card-header>
+            <mat-card-title>Dermatology Services</mat-card-title>
+          </mat-card-header>
+          <mat-card-content class="b-t-1">
+            <button mat-flat-button color="primary" [matMenuTriggerFor]="afterMenu" class="w-80">
+              Dermatology
+            </button>
+            <mat-menu class="cardWithShadow" #afterMenu="matMenu">
+              <button mat-menu-item [matMenuTriggerFor]="after1">
+                Facial Angioma Treatment
+              </button>
+              <button mat-menu-item [matMenuTriggerFor]="after2">
+                Couperose Laser Treatment
+              </button>
+              <button mat-menu-item [matMenuTriggerFor]="after3">
+                Pigmentation Spots
+              </button>
+            </mat-menu>
+
+            <mat-menu class="cardWithShadow" #after1="matMenu">
+              <button mat-menu-item >Dr. Margaux Pelletier</button>
+            </mat-menu>
+
+            <mat-menu class="cardWithShadow" #after2="matMenu">
+              <button mat-menu-item>Dr. Antoine Verdier</button>
+            </mat-menu>
+
+            <mat-menu class="cardWithShadow" #after3="matMenu">
+              <button mat-menu-item>Dr. Charlotte Lemoine</button>
+            </mat-menu>
+          </mat-card-content>
+        </mat-card>
+      </div>
+
+      <div class=" col-sm-6 col-lg-4">
+        <mat-card class="b-1 shadow-none">
+          <mat-card-header>
+            <mat-card-title>Laser Services</mat-card-title>
+          </mat-card-header>
+          <mat-card-content class="b-t-1">
+            <button mat-flat-button color="primary" [matMenuTriggerFor]="beforeMenu" class="w-80">
+              Laser
+            </button>
+            <mat-menu class="cardWithShadow" #beforeMenu="matMenu">
+              <button mat-menu-item [matMenuTriggerFor]="before1">
+                Laser Hair Removal
+              </button>
+              <button mat-menu-item [matMenuTriggerFor]="before2">
+                Laser Tattoo Removal
+              </button>
+              <button mat-menu-item [matMenuTriggerFor]="before3">
+                Laser Stretch Mark Treatment
+              </button>
+            </mat-menu>
+
+            <mat-menu class="cardWithShadow" #before1="matMenu">
+              <button mat-menu-item >Dr. Thomas Reynaud</button>
+            </mat-menu>
+
+            <mat-menu class="cardWithShadow" #before2="matMenu">
+              <button mat-menu-item>Dr. Adrien Rousseau</button>
+            </mat-menu>
+
+            <mat-menu class="cardWithShadow" #before3="matMenu">
+              <button mat-menu-item>Dr. Juliette Clément</button>
+            </mat-menu>
+          </mat-card-content>
+        </mat-card>
+      </div></div> </div>
+     
+     
+     
+     
+     
+     
+     
+     
+     
       <div class="col-12">
         <mat-card class="b-1 shadow-none">
           <mat-card-header>
