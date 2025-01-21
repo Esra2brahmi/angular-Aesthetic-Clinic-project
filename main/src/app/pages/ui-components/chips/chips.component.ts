@@ -6,12 +6,7 @@ import {
   inject,
   signal,
 } from '@angular/core';
-import {
-  CdkDrag,
-  CdkDragDrop,
-  CdkDropList,
-  moveItemInArray,
-} from '@angular/cdk/drag-drop';
+import { DatesComponent } from '../dates/dates.component';
 import { MatCardModule } from '@angular/material/card';
 import {
   MatChipEditedEvent,
@@ -20,22 +15,21 @@ import {
 } from '@angular/material/chips';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
-import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {  FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LiveAnnouncer } from '@angular/cdk/a11y';
 import { MatButtonModule } from '@angular/material/button';
-
+import { MatInputModule } from '@angular/material/input';
+import { MatDatepickerModule } from '@angular/material/datepicker';
 export interface ChipColor {
   name: string;
   color: ThemePalette;
 }
 
-export interface Fruit {
+export interface Doctors {
   name: string;
 }
 
-export interface Vegetable {
-  name: string;
-}
+
 
 @Component({
   selector: 'app-chips',
@@ -47,116 +41,80 @@ export interface Vegetable {
     MatChipsModule,
     MatIconModule,
     MatCardModule,
-    CdkDropList,
-    CdkDrag,
     FormsModule,
     ReactiveFormsModule,
-    MatButtonModule
+    MatButtonModule,
+    DatesComponent
+   
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppChipsComponent {
-  // drag n drop
-  readonly vegetables = signal<Vegetable[]>([
-    { name: 'apple' },
-    { name: 'banana' },
-    { name: 'strawberry' },
-    { name: 'orange' },
-    { name: 'kiwi' },
-    { name: 'cherry' },
-  ]);
-
-  drop(event: CdkDragDrop<Vegetable[]>) {
-    this.vegetables.update((vegetables) => {
-      moveItemInArray(vegetables, event.previousIndex, event.currentIndex);
-      return [...vegetables];
-    });
-  }
-
-  //
-  // Stacked
-  //
-  availableColors: ChipColor[] = [
-    { name: 'Primary', color: 'primary' },
-    { name: 'Accent', color: 'accent' },
-    { name: 'Warn', color: 'warn' },
-  ];
-
-  //
-  //  chips with input
-  //
   addOnBlur = true;
   readonly separatorKeysCodes = [ENTER, COMMA] as const;
-  fruits: Fruit[] = [{ name: 'Lemon' }, { name: 'Lime' }, { name: 'Apple' }];
-
+  doctors: Doctors[] = [{ name: 'Dr. Juliette Garnier' }, { name: 'Dr. Adrien Rousseau' }, { name: 'Dr. Mathieu Clément' }];
   add(event: MatChipInputEvent): void {
     const value = (event.value || '').trim();
 
-    // Add our fruit
+    // Add our doctors
     if (value) {
-      this.fruits.push({ name: value });
+      this.doctors.push({ name: value });
     }
 
     // Clear the input value
     event.chipInput!.clear();
   }
 
-  remove(fruit: Fruit): void {
-    const index = this.fruits.indexOf(fruit);
+  remove(doctor: Doctors): void {
+    const index = this.doctors.indexOf(doctor);
 
     if (index >= 0) {
-      this.fruits.splice(index, 1);
+      this.doctors.splice(index, 1);
     }
   }
 
-  edit(fruit: Fruit, event: MatChipEditedEvent) {
+  edit(doctor: Doctors, event: MatChipEditedEvent) {
     const value = event.value.trim();
 
-    // Remove fruit if it no longer has a name
+    // Remove doctor if it no longer has a name
     if (!value) {
-      this.remove(fruit);
+      this.remove(doctor);
       return;
     }
 
-    // Edit existing fruit
-    const index = this.fruits.indexOf(fruit);
+    // Edit existing doctor
+    const index = this.doctors.indexOf(doctor);
     if (index >= 0) {
-      this.fruits[index].name = value;
+      this.doctors[index].name = value;
     }
   }
 
-  // form control
-
-  readonly keywords = signal(['angular', 'how-to', 'tutorial', 'accessibility']);
-  readonly formControl = new FormControl(['angular']);
-
+  // note
+  readonly notes = signal(['confirmed']);
   announcer = inject(LiveAnnouncer);
-
   removeKeyword(keyword: string) {
-    this.keywords.update(keywords => {
-      const index = keywords.indexOf(keyword);
+    this.notes .update(notes  => {
+      const index = notes .indexOf(keyword);
       if (index < 0) {
-        return keywords;
+        return notes ;
       }
 
-      keywords.splice(index, 1);
+      notes.splice(index, 1);
       this.announcer.announce(`removed ${keyword}`);
-      return [...keywords];
+      return [...notes ];
     });
   }
 
   addForm(event: MatChipInputEvent): void {
     const value = (event.value || '').trim();
 
-    // Add our keyword
+    // Add our note
     if (value) {
-      this.keywords.update(keywords => [...keywords, value]);
+      this.notes .update(notes  => [...notes , value]);
     }
 
     // Clear the input value
     event.chipInput!.clear();
+    
   }
-}
-function isDragDrop(object: any): object is CdkDragDrop<string[]> {
-  return 'previousIndex' in object;
 }
