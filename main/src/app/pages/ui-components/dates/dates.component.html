@@ -1,17 +1,58 @@
 <mat-card class="b-1 shadow-none">
-    <mat-card-header>
-      <mat-card-title>Select Date</mat-card-title>
-    </mat-card-header>
-    <mat-card-content class="b-t-1">
-        <div class="row">
-          <mat-form-field class="w-100" appearance="outline">
-            <mat-label>Date</mat-label>
-             <mat-datepicker-toggle matSuffix [for]="selectDatePicker"></mat-datepicker-toggle>
-           <mat-datepicker #selectDatePicker></mat-datepicker>
-            <input matInput [matDatepicker]="selectDatePicker" [formControl]="selectDate" placeholder="YY/MM/DD"/>
-            </mat-form-field>
-        </div>
-      
-    </mat-card-content>
-  </mat-card>
-  
+  <mat-card-header>
+    <mat-card-title>Select Date</mat-card-title>
+  </mat-card-header>
+  <mat-card-content class="b-t-1">
+    <div class="row">
+      <!-- Single Date Picker -->
+      <mat-form-field class="w-100" appearance="outline">
+        <mat-label>Date</mat-label>
+        <mat-datepicker-toggle matSuffix [for]="selectDatePicker"></mat-datepicker-toggle>
+        <mat-datepicker #selectDatePicker></mat-datepicker>
+        <input matInput [matDatepicker]="selectDatePicker" [formControl]="selectDate" placeholder="YY/MM/DD"/>
+      </mat-form-field>
+    </div>
+  </mat-card-content>
+</mat-card>
+
+<mat-card class="b-1 shadow-none">
+  <mat-card-header>
+    <mat-card-title>Treatment Schedule</mat-card-title>
+  </mat-card-header>
+  <mat-card-content class="b-t-1">
+    <div class="row">
+      <!-- Start Date Picker -->
+      <div class="col-sm-4">
+        <mat-form-field class="w-100" appearance="outline">
+          <mat-label>Start Date</mat-label>
+          <input matInput [matDatepicker]="startDatePicker" [formControl]="startDate" />
+          <mat-datepicker-toggle matSuffix [for]="startDatePicker"></mat-datepicker-toggle>
+          <mat-datepicker #startDatePicker></mat-datepicker>
+        </mat-form-field>
+      </div>
+
+      <!-- End Date Picker -->
+      <div class="col-sm-4">
+        <mat-form-field class="w-100" appearance="outline">
+          <mat-label>End Date</mat-label>
+          <input matInput [matDatepicker]="endDatePicker" [formControl]="endDate" />
+          <mat-datepicker-toggle matSuffix [for]="endDatePicker"></mat-datepicker-toggle>
+          <mat-datepicker #endDatePicker></mat-datepicker>
+        </mat-form-field>
+      </div>
+
+      <!-- Save Button -->
+      <div class="col-sm-4">
+        <button
+          mat-flat-button
+          color="primary"
+          matTooltip="Info about the action"
+          [matTooltipShowDelay]="startDate.value ? startDate.value.getTime() : 0"
+          [matTooltipHideDelay]="endDate.value ? endDate.value.getTime() : 0"
+        >
+          Save
+        </button>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>

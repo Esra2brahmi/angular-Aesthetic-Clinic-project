@@ -125,16 +125,18 @@
             <div class="row">
               <div class="col-sm-4">
                 <mat-form-field class="w-100" appearance="outline">
-                  <mat-label>Show delay</mat-label>
-                  <input matInput type="number" [formControl]="showDelay" />
-                  <mat-hint>milliseconds</mat-hint>
+                  <mat-label>Start Date</mat-label>
+                  <input matInput [matDatepicker]="startDatePicker" [formControl]="startDate" />
+                  <mat-datepicker-toggle matSuffix [for]="startDatePicker"></mat-datepicker-toggle>
+                  <mat-datepicker #startDatePicker></mat-datepicker>
                 </mat-form-field>
               </div>
               <div class="col-sm-4">
                 <mat-form-field class="w-100" appearance="outline">
-                  <mat-label>Hide delay</mat-label>
-                  <input matInput type="number" [formControl]="hideDelay2" />
-                  <mat-hint>milliseconds</mat-hint>
+                  <mat-label>End Date</mat-label>
+                  <input matInput [matDatepicker]="endDatePicker" [formControl]="endDate" />
+                  <mat-datepicker-toggle matSuffix [for]="endDatePicker"></mat-datepicker-toggle>
+                  <mat-datepicker #endDatePicker></mat-datepicker>
                 </mat-form-field>
               </div>
               <div class="col-sm-4">
@@ -142,8 +144,8 @@
                   mat-flat-button
                   color="primary"
                   matTooltip="Info about the action"
-                  [matTooltipShowDelay]="showDelay.value"
-                  [matTooltipHideDelay]="hideDelay2.value"
+                  [matTooltipShowDelay]="startDate.value ? startDate.value.getTime() : 0"
+                  [matTooltipHideDelay]="endDate.value ? endDate.value.getTime() : 0"
                 >
                   Action
                 </button>
@@ -151,6 +153,7 @@
             </div>
           </mat-card-content>
         </mat-card>
+        
       </div>
 
       <div class="col-lg-4 col-sm-6">

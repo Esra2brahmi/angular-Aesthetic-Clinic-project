@@ -24,7 +24,7 @@ export const navItems: NavItem[] = [
     route: '/ui-components/chips',
   },
   {
-    displayName: 'Lists',
+    displayName: 'Patient Profile',
     iconName: 'solar:bookmark-square-minimalistic-line-duotone',
     route: '/ui-components/lists',
   },

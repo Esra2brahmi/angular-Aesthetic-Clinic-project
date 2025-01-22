@@ -10,8 +10,9 @@ import { MatInputModule } from '@angular/material/input';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core'; // Add this import
+
 @Component({
-  selector: 'app-dates',
+  selector: 'app-notes',
   standalone: true,
   imports: [
     MatFormFieldModule,
@@ -25,14 +26,13 @@ import { MatNativeDateModule } from '@angular/material/core'; // Add this import
     MatInputModule,
     MatCheckboxModule,
     MatDatepickerModule,
-    MatNativeDateModule, 
+    MatNativeDateModule,
   ],
-  templateUrl: './dates.component.html',
-  styleUrl: './dates.component.scss'
+  templateUrl: './notes.component.html',
+  styleUrl: './notes.component.scss'
 })
-export class DatesComponent {
-  // show and hide (start and end dates) - explicitly typing as Date | null
-  startDate = new FormControl<Date | null>(null);
-  endDate = new FormControl<Date | null>(null);
-selectDate: FormControl<any>;
+export class NotesComponent {
+  // change message
+  message = new FormControl('');
+
 }

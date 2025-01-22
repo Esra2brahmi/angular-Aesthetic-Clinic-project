@@ -1,0 +1,36 @@
+<!-- <mat-card class="b-1 shadow-none">
+    <mat-card-header>
+      <mat-card-title>Stacked </mat-card-title>
+    </mat-card-header>
+    <mat-card-content class="b-t-1">
+      <mat-chip-listbox
+        class="mat-mdc-chip-set-stacked"
+        aria-label="Color selection"
+      >
+        @for(chip of availableColors; track chip.color) {
+        <mat-chip-option selected [color]="chip.color">
+          {{ chip.name }}
+        </mat-chip-option>
+        }
+      </mat-chip-listbox>
+    </mat-card-content>
+  </mat-card> -->
+  <mat-card class="b-1 shadow-none">
+    <mat-card-header>
+      <mat-card-title>Today's Session</mat-card-title>
+    </mat-card-header>
+    <mat-card-content class="b-t-1">
+      <mat-chip-listbox
+        class="mat-mdc-chip-set-stacked"
+        aria-label="Color selection"
+        style="width: 450px; margin: 0 auto;" 
+      >
+        @for(chip of availableColors; track chip.color) {
+          <mat-chip-option selected [color]="chip.color">
+            {{ chip.name }}
+          </mat-chip-option>
+        }
+      </mat-chip-listbox>
+    </mat-card-content>
+  </mat-card>
+  

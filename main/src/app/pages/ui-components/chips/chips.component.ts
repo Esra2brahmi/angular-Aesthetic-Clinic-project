@@ -20,6 +20,7 @@ import { LiveAnnouncer } from '@angular/cdk/a11y';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatDatepickerModule } from '@angular/material/datepicker';
+
 export interface ChipColor {
   name: string;
   color: ThemePalette;
@@ -47,6 +48,8 @@ export interface Doctors {
     DatesComponent
    
   ],
+
+
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppChipsComponent {
