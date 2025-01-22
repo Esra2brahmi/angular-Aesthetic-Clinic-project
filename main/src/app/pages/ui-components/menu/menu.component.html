@@ -3,7 +3,9 @@
     <mat-card-title class="m-b-0">Medical Services and Professionals</mat-card-title>
   </mat-card-header>
   <mat-card-content class="b-t-1">
+    
     <div class="row">
+
 
    <div class="col"> <div  class="row " style="gap: 100px;">
     <div class="col-sm-6 col-lg-4">
@@ -192,72 +194,9 @@
           </mat-card-content>
         </mat-card>
       </div></div> </div>
-     
-     
-     
-     
-     
-     
-     
-     
-     
+ 
       <div class="col-12">
-        <mat-card class="b-1 shadow-none">
-          <mat-card-header>
-            <mat-card-title>Positions</mat-card-title>
-          </mat-card-header>
-          <mat-card-content class="b-t-1">
-            <div class="row">
-              <div class="col-sm-3">
-                <button mat-flat-button color="primary" class="w-100" [matMenuTriggerFor]="aboveMenu">
-                  Cosmetic Surgery
-                </button>
-                <mat-menu class="cardWithShadow" #aboveMenu="matMenu" yPosition="above">
-                  <button mat-menu-item>Breast Surgery</button>
-                  <button mat-menu-item>Rhinoplasty</button>
-                  <button mat-menu-item>Abdominoplasty</button>
-                  <button mat-menu-item>Blepharoplasty</button>
-                  <button mat-menu-item>Mini Facelift</button>
-                  <button mat-menu-item>Gentle Liposuction</button>
-                </mat-menu>
-              </div>
-              <div class="col-sm-3">
-                <button mat-flat-button color="accent" class="w-100" [matMenuTriggerFor]="belowMenu">
-                  Aesthetic Medicine
-                </button>
-                <mat-menu class="cardWithShadow" #belowMenu="matMenu" yPosition="below">
-                  <button mat-menu-item>Facial Rejuvenation</button>
-                  <button mat-menu-item>Aesthetic Medicine for the Face</button>
-                  <button mat-menu-item>Oculoplastic Surgery</button>
-                  <button mat-menu-item>Aesthetic Medicine for the Body</button>
-                  <button mat-menu-item>Fat Grafting</button>
-                  <button mat-menu-item>Brazilian Butt Lift</button>
-                </mat-menu>
-              </div>
-              <div class="col-sm-3">
-                <button mat-flat-button color="warn" class="w-100" [matMenuTriggerFor]="beforeMenu">
-                  Laser
-                </button>
-                <mat-menu class="cardWithShadow" #beforeMenu="matMenu" xPosition="before">
-                  <button mat-menu-item>Laser Hair Removal</button>
-                  <button mat-menu-item>Laser Tattoo Removal</button>
-                  <button mat-menu-item>Laser Stretch Mark Treatment</button>
-                  
-                </mat-menu>
-              </div>
-              <div class="col-sm-3">
-                <button mat-flat-button color="primary" class="w-100" [matMenuTriggerFor]="afterMenu">
-                  Dermatology
-                </button>
-                <mat-menu class="cardWithShadow" #afterMenu="matMenu" xPosition="after">
-                  <button mat-menu-item>Facial Angioma Treatment</button>
-                  <button mat-menu-item>Couperose Laser Treatment</button>
-                  <button mat-menu-item>Pigmentation Spots</button>
-                </mat-menu>
-              </div>
-            </div>
-          </mat-card-content>
-        </mat-card>
+            <app-doctors></app-doctors>
       </div>
     </div>
   </mat-card-content>

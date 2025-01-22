@@ -9,12 +9,13 @@ import { StackedComponent } from "../stacked/stacked.component";
 import { InputComponent } from "../input/input.component";
 import { DatesComponent } from "../dates/dates.component";
 import { NotesComponent } from "../notes/notes.component";
+import { DoctorsComponent } from "../doctors/doctors.component";
 
 @Component({
   selector: 'app-badge',
   templateUrl: './badge.component.html',
   standalone: true,
-  imports: [MatBadgeModule, MatButtonModule, MatIconModule, MatCardModule, AvatarComponent, PastSugeryComponent, StackedComponent, InputComponent, DatesComponent, NotesComponent],
+  imports: [MatBadgeModule, MatButtonModule, MatIconModule, MatCardModule, AvatarComponent, PastSugeryComponent, StackedComponent, InputComponent, DatesComponent, NotesComponent, DoctorsComponent],
 })
 export class AppBadgeComponent implements OnInit {
   constructor() {}

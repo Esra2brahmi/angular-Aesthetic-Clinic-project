@@ -20,6 +20,7 @@ import { LiveAnnouncer } from '@angular/cdk/a11y';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatDatepickerModule } from '@angular/material/datepicker';
+import { DateComponent } from "../date/date.component";
 
 export interface ChipColor {
   name: string;
@@ -45,9 +46,9 @@ export interface Doctors {
     FormsModule,
     ReactiveFormsModule,
     MatButtonModule,
-    DatesComponent
-   
-  ],
+    DatesComponent,
+    DateComponent
+],
 
 
   changeDetection: ChangeDetectionStrategy.OnPush,

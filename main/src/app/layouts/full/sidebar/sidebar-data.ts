@@ -10,16 +10,16 @@ export const navItems: NavItem[] = [
     route: '/dashboard',
   },
   {
-    navCap: 'Ui Components',
+    navCap: 'Features',
     divider: true
   },
   {
-    displayName: 'Badge',
+    displayName: 'Patient Session',
     iconName: 'solar:archive-minimalistic-line-duotone',
     route: '/ui-components/badge',
   },
   {
-    displayName: 'Chips',
+    displayName: 'Appointments',
     iconName: 'solar:danger-circle-line-duotone',
     route: '/ui-components/chips',
   },
@@ -29,22 +29,22 @@ export const navItems: NavItem[] = [
     route: '/ui-components/lists',
   },
   {
-    displayName: 'Menu',
+    displayName: 'Doctors and services',
     iconName: 'solar:file-text-line-duotone',
     route: '/ui-components/menu',
   },
-  {
-    displayName: 'Tooltips',
-    iconName: 'solar:text-field-focus-line-duotone',
-    route: '/ui-components/tooltips',
-  },
+  // {
+  //   displayName: 'Tooltips',
+  //   iconName: 'solar:text-field-focus-line-duotone',
+  //   route: '/ui-components/tooltips',
+  // },
   {
     displayName: 'Forms',
     iconName: 'solar:file-text-line-duotone',
     route: '/ui-components/forms',
   },
   {
-    displayName: 'Tables',
+    displayName: 'Clients',
     iconName: 'solar:tablet-line-duotone',
     route: '/ui-components/tables',
   },
@@ -62,18 +62,18 @@ export const navItems: NavItem[] = [
     iconName: 'solar:user-plus-rounded-line-duotone',
     route: '/authentication/register',
   },
-  {
-    navCap: 'Extra',
-    divider: true
-  },
-  {
-    displayName: 'Icons',
-    iconName: 'solar:sticker-smile-circle-2-line-duotone',
-    route: '/extra/icons',
-  },
-  {
-    displayName: 'Sample Page',
-    iconName: 'solar:planet-3-line-duotone',
-    route: '/extra/sample-page',
-  },
+  // {
+  //   navCap: 'Extra',
+  //   divider: true
+  // },
+  // {
+  //   displayName: 'Icons',
+  //   iconName: 'solar:sticker-smile-circle-2-line-duotone',
+  //   route: '/extra/icons',
+  // },
+  // {
+  //   displayName: 'Sample Page',
+  //   iconName: 'solar:planet-3-line-duotone',
+  //   route: '/extra/sample-page',
+  // },
 ];
